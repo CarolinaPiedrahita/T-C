@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRM - Mockups Visuales</title>
+  <style>
+    :root {
+      --color-blanco: #FFFFFF;
+      --color-naranja: #FF8C42;
+      --color-naranja-light: #FFB380;
+      --color-naranja-dark: #E67E2F;
+      --color-gris: #E8E8E8;
+      --color-gris-oscuro: #707070;
+      --color-negro: #1A1A1A;
+      --color-dorado: #D4AF37;
+      --color-dorado-light: #E8D7B8;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      color: var(--color-negro);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      margin: 30px 0 10px 0;
+      color: var(--color-naranja);
+      border-bottom: 2px solid var(--color-naranja);
+      padding-bottom: 10px;
+    }
+
+    .mockup-section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    /* Mockup App */
+    .app-mockup {
+      display: flex;
+      height: 600px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .header-mockup {
+      background-color: var(--color-negro);
+      color: var(--color-blanco);
+      padding: 20px 30px;
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header-mockup h1 {
+      color: var(--color-dorado);
+      margin: 0;
+      border: none;
+    }
+
+    .sidebar-mockup {
+      width: 250px;
+      background-color: var(--color-gris);
+      padding: 20px;
+      border-right: 2px solid var(--color-naranja);
+      overflow-y: auto;
+    }
+
+    .sidebar-mockup h2 {
+      color: var(--color-naranja);
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .sidebar-mockup ul {
+      list-style: none;
+    }
+
+    .sidebar-mockup li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-mockup a {
+      display: block;
+      padding: 12px;
+      background-color: var(--color-blanco);
+      color: var(--color-negro);
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s;
+      border-left: 3px solid transparent;
+    }
+
+    .sidebar-mockup a:hover {
+      background-color: var(--color-naranja);
+      color: var(--color-blanco);
+      border-left-color: var(--color-dorado);
+    }
+
+    .sidebar-mockup a.active {
+      background-color: var(--color-naranja);
+      color: var(--color-blanco);
+      font-weight: bold;
+    }
+
+    .content-mockup {
+      flex: 1;
+      padding: 30px;
+      overflow-y: auto;
+      background-color: var(--color-blanco);
+    }
+
+    /* Dashboard Stats */
+    .dashboard-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, var(--color-naranja) 0%, var(--color-naranja-dark) 100%);
+      color: var(--color-blanco);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .stat-card h3 {
+      font-size: 14px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .stat-card p {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    .stat-card.gold {
+      background: linear-gradient(135deg, var(--color-dorado) 0%, #C9A227 100%);
+    }
+
+    .stat-card.gray {
+      background: linear-gradient(135deg, var(--color-gris-oscuro) 0%, #404040 100%);
+    }
+
+    /* Tarjetas de Cliente */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--color-blanco);
+      border: 1px solid var(--color-gris-oscuro);
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+      border-color: var(--color-naranja);
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 2px solid var(--color-gris);
+    }
+
+    .card-header h3 {
+      margin: 0;
+      color: var(--color-negro);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 5px 12px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .status-activo {
+      background-color: var(--color-naranja-light);
+      color: var(--color-blanco);
+    }
+
+    .status-potencial {
+      background-color: var(--color-dorado-light);
+      color: var(--color-negro);
+    }
+
+    .status-inactivo {
+      background-color: var(--color-gris);
+      color: var(--color-gris-oscuro);
+    }
+
+    .client-field {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    .client-field strong {
+      color: var(--color-gris-oscuro);
+      min-width: 80px;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--color-gris);
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background-color: var(--color-naranja);
+      color: var(--color-blanco);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--color-naranja-dark);
+    }
+
+    .btn-secondary {
+      background-color: var(--color-gris);
+      color: var(--color-negro);
+      border: 1px solid var(--color-gris-oscuro);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--color-gris-oscuro);
+      color: var(--color-blanco);
+    }
+
+    /* Formulario */
+    .form-mockup {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: var(--shadow);
+    }
+
+    .form-mockup h2 {
+      color: var(--color-naranja);
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: var(--color-negro);
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid var(--color-gris-oscuro);
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--color-naranja);
+      box-shadow: 0 0 5px rgba(255, 140, 66, 0.3);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 30px;
+      justify-content: flex-end;
+    }
+
+    /* Búsqueda */
+    .search-bar {
+      margin-bottom: 20px;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--color-gris-oscuro);
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .filter-bar select {
+      padding: 10px 15px;
+      border: 1px solid var(--color-gris-oscuro);
+      border-radius: 6px;
+      background-color: var(--color-blanco);
+      cursor: pointer;
+    }
+
+    .label-comparacion {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .color-box {
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+    }
+
+    .color-box.white {
+      background-color: var(--color-blanco);
+      color: var(--color-negro);
+      border: 1px solid #ddd;
+    }
+
+    .color-box.orange {
+      background-color: var(--color-naranja);
+    }
+
+    .color-box.gray {
+      background-color: var(--color-gris);
+      color: var(--color-negro);
+    }
+
+    .color-box.black {
+      background-color: var(--color-negro);
+    }
+
+    .color-box.gold {
+      background-color: var(--color-dorado);
+      color: var(--color-negro);
+    }
+
+    .color-code {
+      font-size: 11px;
+      margin-top: 5px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 CRM Mockups Visuales</h1>
+    <p style="margin-bottom: 30px; color: #666;">
+      Representación visual de cómo se ve la aplicación CRM de Gestión de Clientes
+    </p>
+
+    <!-- PALETA DE COLORES -->
+    <div class="mockup-section">
+      <h2 style="margin-bottom: 20px;">🎨 Paleta de Colores</h2>
+      <div class="color-palette">
+        <div class="color-box white">
+          Blanco
+          <div class="color-code">#FFFFFF</div>
+        </div>
+        <div class="color-box orange">
+          Naranja
+          <div class="color-code">#FF8C42</div>
+        </div>
+        <div class="color-box gray">
+          Gris
+          <div class="color-code">#E8E8E8</div>
+        </div>
+        <div class="color-box black">
+          Negro
+          <div class="color-code">#1A1A1A</div>
+        </div>
+        <div class="color-box gold">
+          Dorado
+          <div class="color-code">#D4AF37</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="mockup-section">
+      <h2>📊 Dashboard (Página Principal)</h2>
+      <div style="margin-top: 20px;">
+        <div class="header-mockup">
+          <h1>CRM Gestor de Clientes</h1>
+          <p>Gestión minimalista y efectiva</p>
+        </div>
+
+        <div style="display: flex;">
+          <div class="sidebar-mockup">
+            <h2>Menú</h2>
+            <ul>
+              <li><a href="#" class="active">Dashboard</a></li>
+              <li><a href="#">Clientes</a></li>
+              <li><a href="#">Nuevo Cliente</a></li>
+            </ul>
+          </div>
+
+          <div class="content-mockup">
+            <h3>Dashboard</h3>
+            <div class="dashboard-stats">
+              <div class="stat-card">
+                <h3>Total de Clientes</h3>
+                <p>24</p>
+              </div>
+              <div class="stat-card">
+                <h3>Clientes Activos</h3>
+                <p>18</p>
+              </div>
+              <div class="stat-card gold">
+                <h3>Potenciales</h3>
+                <p>4</p>
+              </div>
+              <div class="stat-card gray">
+                <h3>Inactivos</h3>
+                <p>2</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LISTA DE CLIENTES -->
+    <div class="mockup-section">
+      <h2>👥 Lista de Clientes</h2>
+      <div style="margin-top: 20px;">
+        <div class="header-mockup">
+          <h1>CRM Gestor de Clientes</h1>
+          <p>Gestión minimalista y efectiva</p>
+        </div>
+
+        <div style="display: flex;">
+          <div class="sidebar-mockup">
+            <h2>Menú</h2>
+            <ul>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#" class="active">Clientes</a></li>
+              <li><a href="#">Nuevo Cliente</a></li>
+            </ul>
+          </div>
+
+          <div class="content-mockup">
+            <h3>Clientes</h3>
+
+            <div class="search-bar">
+              <input type="text" placeholder="Buscar por nombre, email o empresa..." value="Juan">
+            </div>
+
+            <div class="filter-bar">
+              <select>
+                <option selected>Todos los estados</option>
+                <option>Potencial</option>
+                <option>Activo</option>
+                <option>Inactivo</option>
+              </select>
+            </div>
+
+            <div class="clients-grid">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Juan Pérez</h3>
+                  <span class="status-badge status-activo">activo</span>
+                </div>
+                <div class="client-field">
+                  <strong>Email:</strong>
+                  <span>juan@example.com</span>
+                </div>
+                <div class="client-field">
+                  <strong>Teléfono:</strong>
+                  <span>+57 300 1234567</span>
+                </div>
+                <div class="client-field">
+                  <strong>Empresa:</strong>
+                  <span>Tech Solutions</span>
+                </div>
+                <div class="client-field">
+                  <strong>Industria:</strong>
+                  <span>Tecnología</span>
+                </div>
+                <div class="card-actions">
+                  <button class="btn btn-primary">Ver</button>
+                  <button class="btn btn-primary">Editar</button>
+                  <button class="btn btn-secondary">Eliminar</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3>María García</h3>
+                  <span class="status-badge status-potencial">potencial</span>
+                </div>
+                <div class="client-field">
+                  <strong>Email:</strong>
+                  <span>maria@example.com</span>
+                </div>
+                <div class="client-field">
+                  <strong>Teléfono:</strong>
+                  <span>+57 300 9876543</span>
+                </div>
+                <div class="client-field">
+                  <strong>Empresa:</strong>
+                  <span>BuildCorp</span>
+                </div>
+                <div class="client-field">
+                  <strong>Industria:</strong>
+                  <span>Manufactura</span>
+                </div>
+                <div class="card-actions">
+                  <button class="btn btn-primary">Ver</button>
+                  <button class="btn btn-primary">Editar</button>
+                  <button class="btn btn-secondary">Eliminar</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <h3>Carlos López</h3>
+                  <span class="status-badge status-inactivo">inactivo</span>
+                </div>
+                <div class="client-field">
+                  <strong>Email:</strong>
+                  <span>carlos@example.com</span>
+                </div>
+                <div class="client-field">
+                  <strong>Teléfono:</strong>
+                  <span>+57 300 5555555</span>
+                </div>
+                <div class="client-field">
+                  <strong>Empresa:</strong>
+                  <span>Services Inc</span>
+                </div>
+                <div class="client-field">
+                  <strong>Industria:</strong>
+                  <span>Servicios</span>
+                </div>
+                <div class="card-actions">
+                  <button class="btn btn-primary">Ver</button>
+                  <button class="btn btn-primary">Editar</button>
+                  <button class="btn btn-secondary">Eliminar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORMULARIO -->
+    <div class="mockup-section">
+      <h2>📝 Crear/Editar Cliente</h2>
+      <div style="margin-top: 20px;">
+        <div class="form-mockup">
+          <h2>Nuevo Cliente</h2>
+
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" placeholder="Nombre completo" value="Juan Pérez">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email *</label>
+              <input type="email" placeholder="correo@example.com" value="juan@example.com">
+            </div>
+            <div class="form-group">
+              <label>Teléfono</label>
+              <input type="tel" placeholder="+57 300 1234567" value="+57 300 1234567">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Empresa *</label>
+            <input type="text" placeholder="Nombre de la empresa" value="Tech Solutions">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Industria *</label>
+              <select>
+                <option>Seleccionar industria</option>
+                <option selected>Tecnología</option>
+                <option>Retail</option>
+                <option>Servicios</option>
+                <option>Manufactura</option>
+                <option>Otros</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Estado *</label>
+              <select>
+                <option>potencial</option>
+                <option selected>activo</option>
+                <option>inactivo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary">Cancelar</button>
+            <button class="btn btn-primary">Crear Cliente</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPCIÓN -->
+    <div class="mockup-section">
+      <h2>✨ Características Visuales</h2>
+      <ul style="margin-left: 20px; line-height: 1.8;">
+        <li><strong>Diseño Minimalista:</strong> Interfaz limpia y sin distracciones</li>
+        <li><strong>Colores Profesionales:</strong> Naranja vibrante con acentos en dorado</li>
+        <li><strong>Responsivo:</strong> Se adapta a diferentes tamaños de pantalla</li>
+        <li><strong>Sidebar Intuitivo:</strong> Navegación fácil con menú lateral</li>
+        <li><strong>Cards Modernas:</strong> Tarjetas con sombras suaves y hover effects</li>
+        <li><strong>Estados Visuales:</strong> Badges de colores para estados de clientes</li>
+        <li><strong>Formularios Claros:</strong> Inputs bien distribuidos y fáciles de llenar</li>
+        <li><strong>Dashboard Dinámico:</strong> Estadísticas con tarjetas de gradiente</li>
+        <li><strong>Búsqueda Integrada:</strong> Barra de búsqueda y filtros por estado</li>
+        <li><strong>Acciones Rápidas:</strong> Botones Ver, Editar y Eliminar en cada cliente</li>
+      </ul>
+    </div>
+
+    <div class="mockup-section">
+      <h2>🎯 Flujo de Usuario</h2>
+      <div style="line-height: 2;">
+        <p><strong>1. Ingreso a la Aplicación</strong><br>
+           → Se abre el Dashboard con estadísticas de clientes</p>
+
+        <p><strong>2. Ver Lista de Clientes</strong><br>
+           → Click en "Clientes" muestra grid de tarjetas con todos los clientes<br>
+           → Puede buscar por nombre, email o empresa<br>
+           → Puede filtrar por estado (potencial, activo, inactivo)</p>
+
+        <p><strong>3. Ver Detalles de Cliente</strong><br>
+           → Click en botón "Ver" abre detalles completos del cliente</p>
+
+        <p><strong>4. Crear Nuevo Cliente</strong><br>
+           → Click en "Nuevo Cliente" abre formulario<br>
+           → Completa campos: nombre, email, teléfono, empresa, industria, estado<br>
+           → Click en "Crear Cliente" guarda en BD</p>
+
+        <p><strong>5. Editar Cliente</strong><br>
+           → Click en "Editar" desde tarjeta o detalles<br>
+           → Modifica cualquier campo<br>
+           → Click en "Actualizar" guarda cambios</p>
+
+        <p><strong>6. Eliminar Cliente</strong><br>
+           → Click en "Eliminar"<br>
+           → Confirmación de eliminación<br>
+           → Cliente removido de la BD</p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
