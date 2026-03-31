@@ -1,0 +1,8 @@
+{
+  "proyectos": [
+    {"nombre": "Proyecto A", "costo": 50000},
+    {"nombre": "Proyecto B", "costo": 75000},
+    {"nombre": "Proyecto C", "costo": 120000},
+    {"nombre": "Proyecto D", "costo": 95000}
+  ]
+}
